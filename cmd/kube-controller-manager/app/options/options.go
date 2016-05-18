@@ -149,5 +149,6 @@ func (s *CMServer) AddFlags(fs *pflag.FlagSet) {
 	fs.Float32Var(&s.KubeAPIQPS, "kube-api-qps", s.KubeAPIQPS, "QPS to use while talking with kubernetes apiserver")
 	fs.Int32Var(&s.KubeAPIBurst, "kube-api-burst", s.KubeAPIBurst, "Burst to use while talking with kubernetes apiserver")
 	fs.DurationVar(&s.ControllerStartInterval.Duration, "controller-start-interval", s.ControllerStartInterval.Duration, "Interval between starting controller managers.")
+	fs.StringVar(&s.Heapster, "heapster", s.Heapster, "The address of the Heapster server (overrides default pod value).")
 	leaderelection.BindFlags(&s.LeaderElection, fs)
 }

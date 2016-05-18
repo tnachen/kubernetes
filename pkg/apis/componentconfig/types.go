@@ -67,6 +67,8 @@ type KubeProxyConfiguration struct {
 	// conntrackTCPEstablishedTimeout is how long an idle UDP connection will be kept open
 	// (e.g. '250ms', '2s').  Must be greater than 0. Only applicable for proxyMode is Userspace
 	ConntrackTCPEstablishedTimeout unversioned.Duration `json:"conntrackTCPEstablishedTimeout"`
+	// heapster is the address of the Heapster server (overrides default pod value)
+	Heapster string `json:"heapster"`
 }
 
 // Currently two modes of proxying are available: 'userspace' (older, stable) or 'iptables'
